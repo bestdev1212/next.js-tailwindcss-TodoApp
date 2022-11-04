@@ -7,7 +7,7 @@ const ItemsCount:FunctionComponent<{setCountRef: MutableRefObject<Function|null>
         setCountRef.current = setCount
     }, [])
     return (
-        <div className=" text-gray-400 text-xs font-semibold ">{count} items left</div>
+        <div data-test-id="test-todo-counts" className=" text-gray-400 text-xs font-semibold ">{count} items left</div>
     )
 }
 

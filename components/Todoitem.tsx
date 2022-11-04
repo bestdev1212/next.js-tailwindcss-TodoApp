@@ -22,12 +22,12 @@ const Todoitem: FunctionComponent<{ item: ITodo, commType: boolean, update: Func
     }
 
     return (
-        <div className=" h-16 group  dark:bg-[#25273c] items-center flex space-x-4 bg-white overflow-hidden px-4  border-b dark:border-[#383a4f]  border-gray-200">
+        <div  className=" h-16 group  dark:bg-[#25273c] items-center flex space-x-4 bg-white overflow-hidden px-4  border-b dark:border-[#383a4f]  border-gray-200">
             <ColorButton
                 on={active}
                 onClicked={onClicked}
             />
-            <div className={nameClass} >
+            <div data-test-id="test-todo-items" className={nameClass} >
                 {item.name}
             </div>
             <TfiClose className="hidden w-4 h-4 group-hover:block hover:text-blue-500" onClick={(e) => { _delete(item.id) }} />

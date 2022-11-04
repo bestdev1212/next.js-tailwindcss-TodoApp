@@ -41,7 +41,7 @@ const MainContent:FunctionComponent<{addTodo: MutableRefObject<Function|null>}> 
                 <div className={(filterval == 'Active')?"text-blue-600 hover:cursor-pointer select-none":" hover:text-blue-600 hover:cursor-pointer select-none"} onClick={e => {setFilterval('Active')}}>Active</div>
                 <div className={(filterval == 'Completed')?"text-blue-600 hover:cursor-pointer select-none":" hover:text-blue-600 hover:cursor-pointer select-none"} onClick={e => {setFilterval('Completed')}}>Completed</div>
             </div>
-            <div className=" text-gray-400 text-xs mt-12 mb-2 font-semibold text-center">Drag and drop to recorder list</div>
+            {/* <div className=" text-gray-400 text-xs mt-12 mb-2 font-semibold text-center">Drag and drop to recorder list</div> */}
             <div className="invisible"> placeholder </div>
         </div>
     )

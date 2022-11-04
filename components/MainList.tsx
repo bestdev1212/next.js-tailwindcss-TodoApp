@@ -20,7 +20,7 @@ const MainList: FunctionComponent<{
         onCompleted(data) {
             setTodos(data.get_todos)
             if (countRef.current)
-                countRef.current(data.get_todos?.length)
+                countRef.current(data.get_todos?.filter(v => !v.completed).length)
         },
     });
 
@@ -32,9 +32,13 @@ const MainList: FunctionComponent<{
                 name: name,
                 completed: completed
             }
-        }).then(res => { setTodos(res?.data?.add_todo) });
-        if (countRef.current)
-            countRef.current(todos?.length)
+        }).then(res => { 
+            if (countRef.current && res?.data?.add_todo)
+                countRef.current(res?.data?.add_todo.filter(v => !v.completed).length)
+            setTodos(res?.data?.add_todo) 
+            
+        });
+        
     }
 
     const update = (id: number, status: boolean) => {
@@ -52,9 +56,12 @@ const MainList: FunctionComponent<{
             variables: {
                 id: id,
             }
-        }).then(res => { setTodos(res?.data?.delete_todo) });
-        if (countRef.current)
-            countRef.current(todos?.length)
+        }).then(res => { 
+            if (countRef.current && res?.data?.delete_todo)
+                countRef.current(res?.data?.delete_todo.filter(v => !v.completed).length)
+            setTodos(res?.data?.delete_todo) 
+        });
+     
     }
 
     const _clear = () => {
@@ -62,9 +69,12 @@ const MainList: FunctionComponent<{
             variables: {
                 id: -1,
             }
-        }).then(res => { setTodos(res?.data?.delete_todo) });
-        if (countRef.current)
-            countRef.current(todos?.length)
+        }).then(res => { 
+            if (countRef.current && res?.data?.delete_todo)
+                countRef.current(res?.data?.delete_todo.filter(v => !v.completed).length)
+            setTodos(res?.data?.delete_todo) 
+        });
+       
     }
 
     useEffect(() => {
