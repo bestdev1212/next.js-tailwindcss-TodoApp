@@ -1,0 +1,38 @@
+{
+  "name": "next-graphql-socket-todo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "cypress": "cypress open"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.0.2",
+    "@types/node": "18.11.9",
+    "@types/react": "18.0.24",
+    "@types/react-dom": "18.0.8",
+    "apollo-server-micro": "^2.14.2",
+    "deepmerge": "4.2.2",
+    "graphql": "^14.0.2",
+    "next": "13.0.1",
+    "next-themes": "^0.2.1",
+    "prop-types": "^15.6.2",
+    "react": "18.2.0",
+    "react-beautiful-dnd": "^13.1.1",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.6.0",
+    "typescript": "4.8.4",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/react-beautiful-dnd": "^13.1.2",
+    "@types/uuid": "^8.3.4",
+    "autoprefixer": "^10.4.13",
+    "cypress": "^10.11.0",
+    "postcss": "^8.4.18",
+    "tailwindcss": "^3.2.1"
+  }
+}
